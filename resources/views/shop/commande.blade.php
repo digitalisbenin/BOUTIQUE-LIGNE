@@ -37,7 +37,8 @@
                                    <th>N°</th>
                                    <th>Date Commande</th>
                                    <th>Adresse Livraison</th>
-                                   <th>Status</th>
+                                   <th>Status Livraison</th>
+                                   <th>Status Commande</th>
                                    <th>Montant</th>
                                    <th>bonus</th>
 
@@ -79,6 +80,30 @@
                                     </span>
 
                                 </td>
+                                <td class="align-middle border-top-0">
+                                    {{--  <span class="badge bg-warning">{{$value->status}}</span>  --}}
+                                    <span class="badge
+                                         @switch($value->status_commande)
+                                             @case('En Attente')
+                                                 bg-secondary
+                                                 @break
+                                             @case('En cours')
+                                                 bg-warning
+                                                 @break
+                                             @case('Validé')
+                                                 bg-primary
+                                                 @break
+                                             @case('Non Validé')
+                                                 bg-danger
+                                                 @break
+                                             @default
+                                                 bg-secondary
+                                         @endswitch
+                                     ">
+                                         {{ $value->status_commande }}
+                                     </span>
+
+                                 </td>
                                 <td class="align-middle border-top-0">{{$value->montantTotal}} FCFA</td>
                                 <td class="align-middle border-top-0">{{$value->bonus}} FCFA</td>
                                 <td class="text-muted align-middle border-top-0">
@@ -86,15 +111,15 @@
                                    @if($value->status==="En cours")
                                    <a class="text-inherit" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal{{$value->id}}" >
                                        <i class="bi bi-cart4" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Livré"></i>
-      
-      
+
+
                                    </a>
                                    @endif
                                 </td>
                              </tr>
-                            
-                        
-                     
+
+
+
                      <div class="modal fade" id="exampleModal{{$value->id}}" tabindex="-1" aria-labelledby="exampleModalLabel{{$value->id}}" aria-hidden="true">
                          <div class="modal-dialog modal-dialog-centered">
                              <div class="modal-content">
@@ -108,20 +133,7 @@
                                          @csrf
                                          <div class="input-group ">
 
-                                             {{--  <div class="form-check form-check-inline">
-                                                 <input class="form-check-input " type="radio" value="En Attente"
-                                                     name="status" id="nonRadio" checked>
-                                                 <label class="form-check-label text-lg" for="nonRadio">
-                                                     En Attente
-                                                 </label>
-                                             </div>
-                                             <div class="form-check form-check-inline">
-                                                 <input class="form-check-input" type="radio" name="status"
-                                                     id="ouiRadio" value="En cours">
-                                                 <label class="form-check-label" for="ouiRadio">
-                                                     En cours
-                                                 </label>
-                                             </div>  --}}
+                                             
                                              <div class="form-check form-check-inline">
                                                  <input class="form-check-input" type="radio" name="status"
                                                      id="ouiRadio" value="Livré">

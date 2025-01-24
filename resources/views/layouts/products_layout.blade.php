@@ -5,7 +5,7 @@
     <meta content="Codescandy" name="author">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>DIGIT-SHOPPING</title>
+    <title>DI-SHOP</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="https://freshcart.codescandy.com/assets/images/favicon/favicon.ico">
 

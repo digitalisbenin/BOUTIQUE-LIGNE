@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('article_id');
             $table->double('montantTotal');
             $table->enum('status', ['Livré', 'Non Livré'])->default('Non Livré');
+            $table->enum('status_commande', [ 'En cours','Validé', 'Non Validé'])->default('En cours');
             $table->string('adresseLivraison', 70);
             $table->string('livraisonPhoneNumber', 13);
             $table->timestamps();

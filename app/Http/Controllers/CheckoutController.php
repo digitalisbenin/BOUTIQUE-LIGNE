@@ -31,7 +31,7 @@ class CheckoutController extends Controller
     {
         $latestCommande = Commande::where('user_id',  Auth::id())->orderBy('created_at', 'desc')->first();
         $totalMontant = Commande::where('user_id', Auth::id())->sum('montantTotal');
-        
+
         $bonus=Inscription::where('user_id', Auth::id())->first();
         $cartitems=Cart::where('user_id', Auth::id())->get();
         return view('shop.checkout', compact('cartitems','totalMontant','bonus','latestCommande'));
@@ -98,7 +98,7 @@ class CheckoutController extends Controller
         $transaction_id = $request->input('transaction_id');
         $total=0;
         //dd($transaction_id);
-        if ($transaction_id) {
+        if (Auth::check()) {
         if (Auth::check()) {
             $nombreDeLignes = Commande::count();
        // $nombre= 'Commande000'. $nombreDeLignes + 1 ;
@@ -138,13 +138,13 @@ class CheckoutController extends Controller
             $prod->update();
         }
         // Paiement
-        Paiement::create([
+        // Paiement::create([
 
-            'commande_id'=>$commande->id,
-            'raisonPaiement'=>'Commande',
-            'reference'=>$transaction_id,
-            'montantPaye'=>$total,
-        ]);
+        //     'commande_id'=>$commande->id,
+        //     'raisonPaiement'=>'Commande',
+        //     'reference'=>$transaction_id,
+        //     'montantPaye'=>$total,
+        // ]);
 
         // mettre a jour les information de l' utilisateur
         if(Auth::user()->adresseResidence==NULL)
@@ -241,20 +241,38 @@ if (count($user_ids) <= 4) {
                         }
                         $latestCommande->save();
                     }
+                    return redirect('/')->with([
+                        'status' => "Veuillez valider votre commande grâce à l'un des code ci-dessous",
+                        'statut' => "MTN: *880*41*480255*Montant #\n Moov: *855*41*480255*Montant #\n Celtics: *889*41*480255*Montant #\n Merci pour votre commande"
+                    ]);
                     // Retourner une réponse positive
-                    return response()->json(['status' => 'Bonus mis à jour pour toutes les utilisateurs.Commande éfféctuée avec succès']);
+                    // return response()->json(['status' => 'Bonus mis à jour pour toutes les utilisateurs.Commande éfféctuée avec succès']);
                 } else {
                     // Retourner une réponse négative si un ou plusieurs user_ids n'existent pas dans Commande ou si la dernière commande n'est pas dans les 30 derniers jours
-                    return response()->json(['status' => 'Un ou plusieurs utilisateurs n\'a pas éffectué une commande ou la dernière commande n\'est pas dans les 30 derniers jours.Commande éfféctuée avec succès']);
+                    // return response()->json(['status' => 'Un ou plusieurs utilisateurs n\'a pas éffectué une commande ou la dernière commande n\'est pas dans les 30 derniers jours.Commande éfféctuée avec succès']);
+                    // return redirect('/')->with('status',"Commande éfféctuée avec succès");
+                    return redirect('/')->with([
+                        'status' => "Veuillez valider votre commande grâce à l'un des code ci-dessous",
+                        'statut' => "MTN: *880*41*480255*Montant #\n Moov: *855*41*480255*Montant #\n Celtics: *889*41*480255*Montant #\n Merci pour votre commande"
+                    ]);
                 }
             } else {
                 // Retourner une réponse négative si $user_ids ne contient pas 4 valeurs
-                return response()->json(['status' => 'Moins de 4 utilisateur trouvés.Commande éfféctuée avec succès ']);
+                // return response()->json(['status' => 'Moins de 4 utilisateur trouvés.Commande éfféctuée avec succès ']);
+                return redirect('/')->with([
+                    'status' => "Veuillez valider votre commande grâce à l'un des code ci-dessous",
+                    'statut' => "MTN: *880*41*480255*Montant #\n Moov: *855*41*480255*Montant #\n Celtics: *889*41*480255*Montant #\n Merci pour votre commande"
+                ]);
             }
+            return redirect('/')->with([
+                'status' => "Veuillez valider votre commande grâce à l'un des code ci-dessous",
+                'statut' => "MTN: *880*41*480255*Montant #\n Moov: *855*41*480255*Montant #\n Celtics: *889*41*480255*Montant #\n Merci pour votre commande"
+            ]);
 
+            // return redirect('/')->with('status',"Commande éfféctuée avec succès");
+                    // return response()->json(['status'=>"Commande éfféctuée avec succès"]);
 
-
-                    return response()->json(['status'=>"Commande éfféctuée avec succès"]);
+                    // return response()->json(['status'=>"Commande éfféctuée avec succès"]);
        // return redirect('/dashboard')->with('status',"Commande éffectuée avec succès");
         } else {
             return response()->json(['status'=>"Connectez-vous pour continuer"]);

@@ -43,8 +43,8 @@
                                 class="card bg-light border-0 rounded-4"
                                 style="background-image: url({{ asset('assets/images/slider/slider-image-1.jpg') }}); background-repeat: no-repeat; background-size: cover; background-position: right">
                                 <div class="card-body p-lg-6">
-                                    <h1>Bienvenu sur DIGIT-SHOPPING !</h1>
-                                    <p>DIGIT-SHOPPING est une boutique qui permet de faire des achats.</p>
+                                    <h1>Bienvenu sur DI-SHOP !</h1>
+                                    <p>DI-SHOP est une boutique qui permet de faire des achats.</p>
                                     <a href="{{url('create-article')}}" class="btn btn-primary">Ajouter un article</a>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                     <!-- table -->
                     <div class="table-responsive-xl mb-6 mb-lg-0">
                         <div class="row flex-nowrap pb-3 pb-lg-0">
-                          
+
                             <div class="col-lg-3 col-12 mb-6">
                                 <!-- card -->
                                 <div class="card h-100 card-lg">

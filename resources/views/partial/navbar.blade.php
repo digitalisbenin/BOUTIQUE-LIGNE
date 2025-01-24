@@ -26,13 +26,13 @@ $codeParents = Inscription::where('user_id', Auth::id())->first();
             </ul>  --}}
             <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="/accueil" role="button" aria-expanded="false">Accueil</a>
+                    <a class="nav-link" href="/accueil" role="button" aria-expanded="false">ACCUEIL</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('about') }}">A propos de nous</a>
+                    <a class="nav-link" href="{{ url('about') }}">A PROPOS DE NOUS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('partenaire')}}" role="button" aria-expanded="false">Nos partenaires</a>
+                    <a class="nav-link" href="{{url('partenaire')}}" role="button" aria-expanded="false">NOS PARTENAIRES</a>
                 </li>
                 @auth
                     @if (\Illuminate\Support\Facades\Auth::user()->role_id == '1')
@@ -45,12 +45,12 @@ $codeParents = Inscription::where('user_id', Auth::id())->first();
                 @guest
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a href="{{ route('register') }}" class="btn btn-light-primary me-3 mb-1">S'inscrire</a>
+                            <a href="{{ route('register') }}" class="btn btn-light-primary me-3 mb-1">S'INSCRIRE</a>
                         </li>
                     @endif
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a href="{{ route('login') }}" class="btn btn-dark me-3 mb-1">Se Connecter</a>
+                            <a href="{{ route('login') }}" class="btn btn-dark me-3 mb-1">SE CONNECTER</a>
                         </li>
                     @endif
                 @else

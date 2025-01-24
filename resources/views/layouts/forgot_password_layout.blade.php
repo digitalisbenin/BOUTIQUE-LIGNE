@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Codescandy" name="author">
-    <title>Forget Password eCommerce HTML Template - FreshCart</title>
+    <title>DI-SHOP</title>
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="https://freshcart.codescandy.com/assets/images/favicon/favicon.ico">
 

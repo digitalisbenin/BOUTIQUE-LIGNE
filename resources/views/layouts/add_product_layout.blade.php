@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Codescandy" name="author">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>DIGIT-SHOPPING</title>
+    <title>DI-SHOP</title>
     <link href="{{ asset('assets/libs/dropzone/dist/min/dropzone.min.css') }}" rel="stylesheet" />
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/x-icon" href="https://freshcart.codescandy.com/assets/images/favicon/favicon.ico">

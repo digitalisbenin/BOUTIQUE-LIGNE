@@ -137,7 +137,7 @@ return [
     'starts_with' => 'Le :attribute doit commencer par l\'un des éléments suivants : :values.',
     'string' => 'Le :attribute doit être une chaîne.',
     'timezone' => 'Le :attribute doit être un fuseau horaire valide.',
-    'unique' => 'Le :attribute a déjà été pris.',
+    'unique' => 'L\' :attribute à déjà été utilisé.',
     'uploaded' => 'Le :attribute n\'a pas pu être téléchargé.',
     'uppercase' => 'Le :attribute doit être en majuscule.',
     'url' => 'Le :attribute doit être une URL valide.',

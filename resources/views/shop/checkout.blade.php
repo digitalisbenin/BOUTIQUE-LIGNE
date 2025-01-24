@@ -449,14 +449,14 @@ use Carbon\Carbon;
 												<div class="d-flex align-items-center justify-content-between fw-bold">
 													<div>Total</div>
 													<div id="totalDisplay">{{$total}} FCFA</div>
-                                                   
+
 												</div>
 											</li>
                                             @php
-                                     
+
                                             $totals = session('total', 0);
-            
-            
+
+
                                                  @endphp
 
 											@if ($totals)
@@ -464,10 +464,10 @@ use Carbon\Carbon;
 												<div class="d-flex align-items-center justify-content-between fw-bold">
 													<div>Total après retrait bonus</div>
 													<div id="totalDisplay">{{$totals}} FCFA</div>
-                                                   
+
 												</div>
 											</li>
-                                                
+
                                             @endif
 										</ul>
 									</div>
@@ -552,11 +552,11 @@ use Carbon\Carbon;
                                         {{ $latestCommande->created_at }}<br>
                                         {{ Carbon::now()->subDays(30) }} --}}
                                         {{-- @if ($totalMontant>=5000 && $bonus->bonus>=5000 && $latestCommande->created_at < Carbon::now()->subDays(30))
-                                        {{ $bonus->bonus }} 
+                                        {{ $bonus->bonus }}
                                         @endif --}}
-                                       
-                                    
-                                       
+
+
+
                                         {{--  <kkiapay-widget amount="{{$total}}"
                                         key="2dad4950979311ebb611b7e676b55ada"
                                         position="center"
@@ -570,12 +570,15 @@ use Carbon\Carbon;
 
                                         {{--  <button class=" btn btn-primary" onclick="paymentCallback()">Payer</button>  --}}
 
+                                        <div class="d-grid mt-3">
+                                        <button type="submit" class=" btn btn-outline-success align-items-center">Commander</button>
+                                        </div>
                                     </form>
                                     {{-- {{ Carbon::now()}}<br>
                                     {{ Carbon::now()->subDays(30) }}<br>
                                     {{ $latestCommande->created_at }}<br> --}}
 
-                                    @if ($totalMontant >= 5000 && $bonus !== null && $bonus->bonus >= 5000 && $latestCommande->created_at > Carbon::now()->subDays(30))
+                                    @if  ($total >= 5000 && $totalMontant >= 5000 && $bonus !== null && $bonus->bonus >= 5000 && $latestCommande->created_at > Carbon::now()->subDays(30))
                                     {{-- vous avez un bonus de
                                     <h6>{{ $bonus->bonus }} FCFA</h6>
                                      utilisable pour cette commande --}}
@@ -584,29 +587,33 @@ use Carbon\Carbon;
 
                                      <form  id="update-total-form" action="{{ url('update-total') }}" method="POST">
                                         @csrf
-                                       
-                                          
+
+
                                             <input type="hidden"  name="totalNew" value="{{ $total }}" >
-                                       
+
                                             <input type="hidden" name="bonus" value="{{ $bonus->bonus }}">
-                                        
-                                       
+
+
                                         {{-- <button class="btn btn-primary"  type="submit">bonus</button> --}}
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" id="useBonus" name="useBonus"  {{ session('total') ? 'checked' : '' }}>
-                                           
+
                                             <label class="form-check-label" for="useBonus">Utiliser le bonus</label>
                                         </div>
+                                        
                                     </form>
-                                    
 
 
-                                    
-                              
+
+
+
                                     <input type="hidden" name="bonus" value="{{ $bonus->bonus }}">
                                 @endif
                                     <div class="d-grid mt-3">
-                                    <button class="kkiapay-button btn btn-outline-success align-items-center">Commander</button> </div>
+                                    {{--  <button class="kkiapay-button btn btn-outline-success align-items-center">Commander</button>  --}}
+                                    {{--  <button type="submit" class=" btn btn-outline-success align-items-center">Commander</button>  --}}
+                                </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -784,8 +791,8 @@ use Carbon\Carbon;
 
 
     });
-    
- 
+
+
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -795,7 +802,7 @@ use Carbon\Carbon;
     checkbox.addEventListener('change', function() {
         form.submit();
     });
-    
+
 });
 
 </script>
@@ -805,7 +812,7 @@ use Carbon\Carbon;
         // Récupère les valeurs des attributs data
         var total = parseFloat($(this).data('total'));
         var bonus = parseFloat($(this).data('bonus'));
-        
+
         // Calcule le nouveau total
         var totalNew = total - bonus;
         $('#totalDisplay').text('Nouveau total: ' + totalNew);
@@ -827,7 +834,7 @@ use Carbon\Carbon;
         success: function(response) {
           // Traite la réponse du serveur si nécessaire
           console.log('Total mis à jour avec succès', response);
-        
+
         },
         error: function(xhr, status, error) {
           // Gère les erreurs de la requête
@@ -847,16 +854,16 @@ use Carbon\Carbon;
             let bonus = parseFloat(this.getAttribute('data-bonus'));
             console.log(total);
             console.log(bonus);
-    
+
             // Soustraire le bonus du total
             total -= bonus;
-    
+
             // Afficher le nouveau total (ou faire autre chose avec cette valeur)
             document.getElementById('totalDisplay').textContent = 'Total: ' + total + ' FCFA';
-    
+
             // Mettre à jour l'attribut de données pour refléter le nouveau total
             this.setAttribute('data-total', total);
-            
+
             totalNew = total;
 
             console.log('Total mis à jour:', total);
@@ -867,7 +874,7 @@ use Carbon\Carbon;
         });
     });
     </script> --}}
-    
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @if (Session::has('status'))
@@ -907,11 +914,11 @@ use Carbon\Carbon;
         console.log(response.transactionId);
         transactionId = response.transactionId;
         commandes(transactionId);
-        
+
     });
 
    function commandes (transaction) {
-            
+
 
 
                     var adresses = $('input[name="adresse"]').val();
@@ -941,7 +948,7 @@ use Carbon\Carbon;
                             setTimeout(function() {
                                 window.location.href = "{{ url('dashboard') }}" ;
                             }, 9000);
-                           
+
                            //loads();
                            // $('.cartitems').load(location.href +" .cartitems");
                             swal(response.status,"","success")
@@ -955,7 +962,7 @@ use Carbon\Carbon;
 
 
         };
-       
+
    addFailedListener(error => {
         console.log(error);
     });

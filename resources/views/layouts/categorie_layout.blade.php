@@ -2,7 +2,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta content="Codescandy" name="author">
+    <meta content="dishop" name="author">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>DIGIT-SHOPPING</title>

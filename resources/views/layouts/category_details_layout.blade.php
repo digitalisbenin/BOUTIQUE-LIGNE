@@ -5,7 +5,7 @@
     <meta content="Codescandy" name="author">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>DIGIT-SHOPPING</title>
+    <title>DI-SHOP</title>
     <link href="{{ asset('assets/libs/tiny-slider/dist/tiny-slider.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/libs/nouislider/dist/nouislider.min.css') }}" rel="stylesheet" />
     <!-- Favicon icon-->

@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Codescandy" name="author">
-    <title>DIGIT-SHOPPING</title>
+    <title>DI-SHOP</title>
     <link href="{{ asset('assets/libs/slick-carousel/slick/slick.css') }}" rel="stylesheet"/>
     <link href="{{asset('assets/libs/slick-carousel/slick/slick-theme.css')}}" rel="stylesheet"/>
     <!-- Favicon icon-->

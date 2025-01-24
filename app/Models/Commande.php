@@ -15,6 +15,7 @@ class Commande extends Model
         'montantTotal',
         'bonus',
         'status',
+        'status_commande',
         'adresseLivraison',
         'livraisonPhoneNumber',
         'created_at',

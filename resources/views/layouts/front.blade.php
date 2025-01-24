@@ -9,7 +9,7 @@
     <meta content="Codescandy" name="author">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>DIGIT-SHOPPING</title>
+    <title>DI-SHOP</title>
     <link href="{{ asset('assets/libs/tiny-slider/dist/tiny-slider.css') }}" rel="stylesheet"/>
     <link href="{{ asset('assets/libs/slick-carousel/slick/slick.css') }}" rel="stylesheet"/>
     <link href="{{ asset('assets/libs/slick-carousel/slick/slick-theme.css') }}" rel="stylesheet"/>
@@ -111,90 +111,7 @@
                 </ul>
             </div>
         </div>
-        {{--  <hr class="my-lg-8 opacity-25"/>
-        <div class="row g-4">  --}}
-            {{--  <div class="col-12 col-md-12 col-lg-4">
-                <h6 class="mb-4 text-white">Categories</h6>
-                <div class="row">
-                    <div class="col-6">
-                        <!-- list -->
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Vegetables & Fruits</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Breakfast & instant food</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Bakery & Biscuits</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Atta, rice & dal</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Sauces & spreads</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Organic & gourmet</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Baby care</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Cleaning essentials</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Personal care</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6">
-                        <!-- list -->
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Dairy, bread & eggs</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Cold drinks & juices</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Tea, coffee & drinks</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Masala, oil & more</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Chicken, meat & fish</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Paan corner</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Pharma & wellness</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Home & office</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Pet care</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>  --}}
-            {{--  <div class="col-12 col-md-12 col-lg-8">
-                <div class="row g-4">
-                    <div class="col-6 col-sm-6 col-md-3">
-                        <h6 class="mb-4 text-white">Get to know us</h6>
-                        <!-- list -->
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Company</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">About</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Blog</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Help Center</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Our Value</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-3">
-                        <h6 class="mb-4 text-white">For Consumers</h6>
-                        <ul class="nav flex-column">
-                            <!-- list -->
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Payments</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Shipping</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Product Returns</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">FAQ</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Shop Checkout</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-3">
-                        <h6 class="mb-4 text-white">Become a Shopper</h6>
-                        <ul class="nav flex-column">
-                            <!-- list -->
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Shopper Opportunities</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Become a Shopper</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Earnings</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Ideas & Guides</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">New Retailers</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-3">
-                        <h6 class="mb-4 text-white">Freshcart programs</h6>
-                        <ul class="nav flex-column">
-                            <!-- list -->
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Freshcart programs</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Gift Cards</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Promos & Coupons</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Freshcart Ads</a></li>
-                            <li class="nav-item mb-2"><a href="#!" class="nav-link">Careers</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>  --}}
-        {{--  </div>  --}}
+        
         <hr class="mt-8 opacity-25"/>
         <div>
             <div class="row gy-4 align-items-center">
@@ -207,36 +124,12 @@
 								document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
 							</script>
 						</span>
-						DIGIT-SHOPPING eCommerce.Tous droit réservées. Designer Par
-						<a href="#">Digitalis</a>
+						DI-SHOP eCommerce.Tous droit réservées. Designer Par
+						<a href="https://digitalis.wadounnou.com/" target="blank">Digitalis</a>
 					</span>
                 </div>
                 <div class="col-lg-6 text-end mb-2 mb-lg-0">
-                    {{--  <ul class="list-inline mb-0">
-                        <li class="list-inline-item text-light">Payment Partners</li>
-                        <li class="list-inline-item">
-                            <a href="#!"><img src="https://freshcart.codescandy.com/assets/images/payment/amazonpay.svg"
-                                              alt=""/></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!"><img
-                                    src="https://freshcart.codescandy.com/assets/images/payment/american-express.svg"
-                                    alt=""/></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!"><img
-                                    src="https://freshcart.codescandy.com/assets/images/payment//mastercard.svg"
-                                    alt=""/></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!"><img src="https://freshcart.codescandy.com/assets/images/payment/paypal.svg"
-                                              alt=""/></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!"><img src="https://freshcart.codescandy.com/assets/images/payment/visa.svg"
-                                              alt=""/></a>
-                        </li>
-                    </ul>  --}}
+                    
                 </div>
             </div>
         </div>
@@ -279,12 +172,23 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     @if(session('status'))
+    <script>
+        swal({
+            title: "{!! session('status') !!}",
+            text: `{!! (e(session('statut'))) !!}`,
+            icon: "success",
+            button: "OK",
+        });
+    </script>
+@endif
+
+    @if(session('status'))
         <script>
-            {{--  swal("{{ session('status') }}");  --}}
-            swal( "{!!Session::get('status')!!}","", 'success', {
+
+            swal( "{!!Session::get('status')!!}","{!!Session::get('statut')!!}", 'success', {
                 button: true,
                 button:"OK",
-                timer: 5000,
+
             });
         </script>
     @endif
@@ -292,5 +196,5 @@
 
 </body>
 
-<!-- Mirrored from freshcart.codescandy.com/pages/index-4.html by HTTrack Website Copier/3.x  Tue, 16 Apr 2024 11:44:14 GMT -->
+
 </html>

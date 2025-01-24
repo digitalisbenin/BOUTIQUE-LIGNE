@@ -50,6 +50,10 @@ Route::get('/accueil', function () {
 Route::get('/shop', function () {
     return view('shop.shop');
 });
+Route::get('/condition', function () {
+    return view('condition');
+});
+
 // Route::get('/mes-commandes', function () {
 //     return view('shop.commande');
 // });

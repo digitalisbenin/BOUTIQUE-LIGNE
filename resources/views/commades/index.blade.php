@@ -79,7 +79,7 @@
                                                         <label class="form-check-label" for="checkAll"></label>
                                                     </div>
                                                 </th>  --}}
-                                                <th>N°</th>
+                                                {{--  <th>N°</th>  --}}
 
                                                  <th>Date</th>
                                                  <th>Adresse Livraison</th>
@@ -88,6 +88,7 @@
                                                 <th>bonus</th>
                                                 <th>Téléphone</th>
                                                 <th>Status</th>
+                                                <th>Status Commande</th>
                                                 <th>Livreurs</th>
 
 
@@ -105,7 +106,7 @@
                                                         </div>
                                                     </td>  --}}
 
-                                                    <td><a href="#" class="text-reset">{{ $value-> numeroCommande }} </a>
+                                                    {{--  <td><a href="#" class="text-reset">{{ $value-> numeroCommande }} </a>  --}}
                                                     </td>
                                                     <td>{{ $value->created_at->format('d-m-Y') }}</td>
                                                     <td>{{ $value ->adresseLivraison }}</td>
@@ -135,6 +136,30 @@
                                                         {{ $value->status }}
                                                     </span>
                                                     </td>
+
+                                                    <td>
+                                                        <span class="badge
+                                                        @switch($value->status_commande)
+                                                            @case('En Attente')
+                                                            bg-light-info text-dark-info
+                                                                @break
+                                                            @case('En cours')
+                                                            bg-light-warning text-dark-warning
+                                                                @break
+                                                            @case('Validé')
+                                                            bg-light-primary text-dark-primary
+                                                                @break
+                                                            @case('Non Validé')
+                                                            bg-light-danger text-dark-danger
+                                                                @break
+                                                            @default
+                                                                bg-secondary
+                                                        @endswitch
+                                                    ">
+                                                        {{ $value->status_commande }}
+                                                    </span>
+                                                    </td>
+
                                                     <td>
                                                         {{ $value->livreurs->nom  ?? 'N/'}}   {{ $value->livreurs->prenoms  ?? 'A'}}
                                                     </td>
@@ -258,7 +283,7 @@
                                                             <div class="modal-dialog modal-dialog-centered">
                                                                 <div class="modal-content p-2">
                                                                     <div class="modal-header border-0">
-                                                                        <h5 class="modal-title fs-3 fw-bold" id="userModalLabel">Affecter à un livreur</h5>
+                                                                        <h5 class="modal-title fs-3 fw-bold" id="userModalLabel">Valider et affecter à un livreur</h5>
                                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                     </div>
                                                                     <div class="modal-body">
@@ -276,6 +301,41 @@
                                                                                     @endforeach
                                                                                 </select>
                                                                             </div>
+                                                                            <label for="email" class="form-label">Valider un commande</label>
+                                                                            <div class="input-group mb-4 mt-4 ">
+                                                                                
+                                                                                {{--  <div class="form-check form-check-inline">
+                                                                                    <input class="form-check-input " type="radio" value="En Attente"
+                                                                                        name="status" id="nonRadio" checked>
+                                                                                    <label class="form-check-label text-lg" for="nonRadio">
+                                                                                        En Attente
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check form-check-inline">
+                                                                                    <input class="form-check-input" type="radio" name="status"
+                                                                                        id="ouiRadio" value="En cours">
+                                                                                    <label class="form-check-label" for="ouiRadio">
+                                                                                        En cours
+                                                                                    </label>
+                                                                                </div>  --}}
+                                                                                <div class="form-check form-check-inline">
+                                                                                    <input class="form-check-input" type="radio" name="status_commande"
+                                                                                        id="ouiRadio" value="Validé">
+                                                                                    <label class="form-check-label" for="ouiRadio">
+                                                                                        Validé
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check form-check-inline">
+                                                                                    <input class="form-check-input" type="radio" name="status_commande"
+                                                                                        id="ouiRadio" value="Non Validé">
+                                                                                    <label class="form-check-label" for="ouiRadio">
+                                                                                        Non Validé
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+
+
+
                                                                             <button type="submit" class="btn btn-primary float-end">Affecter</button>
                                                                         </form>
                                                                     </div>

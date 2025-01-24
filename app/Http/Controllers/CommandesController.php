@@ -125,9 +125,18 @@ class CommandesController extends Controller
         if($request->input('livreur_id')){
             $commande =Commande::find($id);
             $commande->livreur_id=$request->input('livreur_id');
+            $commande->status_commande=$request->input('status_commande');
              $commande->status='En cours';
             $commande->update();
-            return redirect('commande')->with('status',"Commande affecter à un livreurs avec succèss");
+            return redirect('commande')->with('status',"Commande valider et  affecter à un livreurs avec succèss");
+        }else if($request->input('status_commande')&& !$request->input('livreur_id')){
+            $commande =Commande::find($id);
+           
+            $commande->status_commande=$request->input('status_commande');
+             $commande->status='En cours';
+            $commande->update();
+            return redirect('commande')->with('status',"Commande valider avec succèss");
+            
         }
         else{
             $commande =Commande::find($id);
